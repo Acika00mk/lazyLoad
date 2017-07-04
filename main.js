@@ -40,7 +40,7 @@
 
 
     angular.module('userModule', []).component('usrComp', {
-        template: 'This is the user module',
+        template: 'This is the user module <a ui-sref="app">back</a>',
         controller : function () {
             console.log('user');
         }
