@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-ui-router.min.js"></script>
+    <script src="../lib/ocLazyLoad.min.js"></script>
+    <script src="./main.js"></script>
+    <title>lazy load test</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link rel="canonical" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body ng-app="myApp">
+<!--    <div ui-view>loading ... </div>-->
+
+
+
+
+
+    <div class="container">
+<div ui-view="header"></div>
+  <section class="projects">
+    <div class="wrapper">
+      <div class="col-2">
+        <div class="col2-project-element-1" ui-view="firstView">
+        </div>
+        <div class="col2-project-element-2" ui-view="secondView">
+        </div>
+        </div>
+    </div>
+  </section>
+  <div class="load-more">
+    <a href="#" class="load-more-link">Load more</a>
+  </div>
+</div>
+
+</body>
+
+</html>

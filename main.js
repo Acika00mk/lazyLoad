@@ -60,7 +60,6 @@
     });
 
 
-
     function UserController(MyService) {
         var self = this;
 
