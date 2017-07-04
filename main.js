@@ -26,7 +26,6 @@
                 template: '<usr-comp></usr-comp>',
                 resolve: {
                     'MyServiceData': function (MyService) {
-// MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
                         return MyService.promise;
                     },
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -45,13 +44,10 @@
 
     app.service('MyService', function ($http) {
         var myData = null, promise = 'data';
-
         promise = $http.get('https://api.nasa.gov/planetary/apod?api_key=RGsrp9OwHVBgdY08ejeksgfnqxh6tQ7sfigjotdb').then(function (data) {
             console.log(data);
             myData = data.data;
         });
-
-
         return {
             promise: promise,
             setData: function (data) {
