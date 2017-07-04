@@ -1,0 +1,14 @@
+{
+  "name": "testoclazyload",
+  "version": "1.0.0",
+  "description": "Test oclazyload with ui.router (component routing)",
+  "main": "index.html",
+  "scripts": {},
+  "author": "Aleks",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^1.0.3",
+    "oclazyload": "^1.0.9"
+  }
+}
