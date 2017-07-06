@@ -3,7 +3,7 @@
     /*global
         alert, confirm, console, prompt, angular
     */
-    var app = angular.module('myApp', ['ui.router', 'oc.lazyLoad'])
+    var app = angular.module('myApp', ['ui.router', 'oc.lazyLoad', 'headerModule'])
         .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider.state('app', {
@@ -29,7 +29,7 @@
                         return MyService.promise;
                     },
                     deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                        return $ocLazyLoad.inject(
+                        return $ocLazyLoad.load(
                             {
                                 name: "userModule"
                             }
@@ -39,7 +39,7 @@
             });
         }
             ]
-               );
+               )
 
 
     app.service('MyService', function ($http) {
@@ -77,6 +77,14 @@
         template: '<div>YES</div>'
     });;
 
+    function HeaderController(){
+        console.log('da');
+    }
 
-
+    angular.module('headerModule', []).component('headerComponent',{
+        templateUrl	 : './templates/header.html',
+        controller : HeaderController,
+        replace : true,
+        controllerAs: 'header'
+    })
 }());
