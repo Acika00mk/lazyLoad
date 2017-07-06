@@ -70,8 +70,13 @@
     }
 
     angular.module('userModule', []).component('usrComp', {
-        template: '<div>This is the user module <a ui-sref="app">back</a> {{user.imageData}}</div>',
+        template: '<div>This is the user module <a ui-sref="app">back</a> {{user.imageData}}</div> <name-component>Aleks</name-component>',
         controller : UserController,
         controllerAs: 'user'
-    });
+    }).component('nameComponent', {
+//        template: '<div></div>'
+    });;
+
+
+
 }());
