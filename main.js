@@ -74,7 +74,7 @@
         controller : UserController,
         controllerAs: 'user'
     }).component('nameComponent', {
-//        template: '<div></div>'
+        template: '<div>YES</div>'
     });;
 
 
